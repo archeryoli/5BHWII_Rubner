@@ -12,8 +12,8 @@ def draw(list, how_many):
     dictionary[list[num]] += 1
     list = list[:num] + list[num + 1:]
 
-
 for i in range(10000):
+  # liste von 1 bis 45 erstellen
   numbers = list(range(1, 46))
   draw(numbers, 6)
 
