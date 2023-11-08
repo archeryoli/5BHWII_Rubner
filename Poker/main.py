@@ -157,16 +157,19 @@ class TestingPokerTests(unittest.TestCase):
 # unittest.main()
 draws = 1000000
 
-for i in range(draws):
- draw(cards, 5)
+def main():
+    for i in range(draws):
+        draw(cards, 5)
 
-fig, ax = plt.subplots()
-sum = 0
-for key, value in possibilities.items():
-  p = ax.bar(key, 100*value / draws, label=(str(100*value / draws) + " %"))
-  ax.bar_label(p, label_type="edge")
-  print(key, 100 * value / draws, "%", "(", value, ")")
-  sum += value
-print(sum)
-plt.show()
+    fig, ax = plt.subplots()
+    sum = 0
+    for key, value in possibilities.items():
+        p = ax.bar(key, 100*value / draws, label=(str(100*value / draws) + " %"))
+        ax.bar_label(p, label_type="edge")
+        print(key, 100 * value / draws, "%", "(", value, ")")
+        sum += value
+        print(sum)
+    plt.show()
 
+if __name__ == "__main__":
+    main()
