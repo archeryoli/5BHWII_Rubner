@@ -156,10 +156,11 @@ class TestingPokerTests(unittest.TestCase):
 
 # unittest.main()
 draws = 1000000
-
+cards_in_hand = 5
 def main():
+    unittest.main()
     for i in range(draws):
-        draw(cards, 5)
+        draw(cards, cards_in_hand)
 
     fig, ax = plt.subplots()
     sum = 0
