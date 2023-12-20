@@ -12,7 +12,7 @@ class Firma():
     return len(self.abteilungen)
   
   def max_mitarbeiter(self):
-    return list(filter(lambda x: len(x.mitarbeiter) == max(list(map(lambda x: len(x.mitarbeiter), self.abteilungen))), self.abteilungen))[0]
+    return max(self.abteilungen, key=lambda x: len(x.mitarbeiter))
 
   def percent_woman(self):
     return len(list(filter(lambda mitarbeiter: mitarbeiter.gender, [item for sublist in list(map(lambda x: x.mitarbeiter, self.abteilungen)) for item in sublist]))) * 100/ self.amount_of_employees()
